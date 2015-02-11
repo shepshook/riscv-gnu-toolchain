@@ -477,7 +477,7 @@
 #define MASK_C_SLLI  0x1c1f
 #define MATCH_AMOXOR_D 0x2000302f
 #define MASK_AMOXOR_D  0xf800707f
-#define MATCH_SETTAG 0x27
+#define MATCH_SETTAG 0x6b
 #define MASK_SETTAG  0x7f
 #define MATCH_FCVT_WU_S 0xc0100053
 #define MASK_FCVT_WU_S  0xfff0007f
