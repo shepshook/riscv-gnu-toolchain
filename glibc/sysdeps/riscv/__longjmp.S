@@ -22,6 +22,14 @@
 
 ENTRY (__longjmp)
 	REG_L ra,  0*SZREG(a0)
+
+/*  Need to rebless the ra in jmp_buf
+    so this jmp_buf can be reused.
+*/
+  REG_L s0,  0*SZREG(a0)
+  settag s0, 1
+  REG_S s0,  0*SZREG(a0)
+
 	REG_L s0,  1*SZREG(a0)
 	REG_L s1,  2*SZREG(a0)
 	REG_L s2,  3*SZREG(a0)

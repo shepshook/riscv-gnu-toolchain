@@ -63,6 +63,12 @@ ENTRY (__sigsetjmp)
 	REG_S a3, 15*SZREG(a0)
 #endif
 
+  /* Need to bless %ra before we return to avoid traps.
+     This is safe because %ra holds the address of the
+     instruction AFTER the instruction that called setjmp,
+     which must have been user (not attacker) initiated. */
+  settag ra, 1
+
 #if defined NOT_IN_libc && defined IS_IN_rtld
   /* In ld.so we never save the signal mask.  */
   li a0, 0
