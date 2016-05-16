@@ -196,7 +196,7 @@ const struct riscv_opcode riscv_builtin_opcodes[] =
 {"lui",       "I",   "d,u",  MATCH_LUI, MASK_LUI, match_opcode,   WR_xd },
 {"settag",    "I",   "d,u",  MATCH_SETTAG, MASK_SETTAG, match_opcode, WR_xd },
 {"tagpolicy", "I",   "d,s,t",  MATCH_TAGPOLICY, MASK_TAGPOLICY, match_opcode, WR_xd|RD_xs1|RD_xs2 },
-{"tagcmd",    "I",   "d,s,j",  MATCH_TAGCMD, MASK_TAGCMD, match_opcode,  WR_xd|RD_xs1 },
+{"tagcmd",    "I",   "d,s,t",  MATCH_TAGCMD, MASK_TAGCMD, match_opcode,  WR_xd|RD_xs1|RD_xs2 },
 {"not",       "I",   "d,s",  MATCH_XORI | MASK_IMM, MASK_XORI | MASK_IMM, match_opcode,   INSN_ALIAS|WR_xd|RD_xs1 },
 {"ori",       "I",   "d,s,j",  MATCH_ORI, MASK_ORI, match_opcode,   WR_xd|RD_xs1 },
 {"or",        "I",   "d,s,t",  MATCH_OR, MASK_OR, match_opcode,   WR_xd|RD_xs1|RD_xs2 },
